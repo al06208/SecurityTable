@@ -1,6 +1,8 @@
 package hashTable;
 
 public class Chain {
+	int aaa;
+	public Chain() {this.aaa = 1;};
 	public class Node{
 		public int key;
 		private Employee value;
@@ -40,7 +42,7 @@ public class Chain {
 	public boolean contains(Employee e) {
 		Node current = this.first;
 		for(int i=0;i<size;i++) {
-			if(current.value.getName()==e.getName())
+			if(current.value.getName().equals(e.getName()))
 				return true;
 			current = current.next;
 		}
@@ -49,8 +51,8 @@ public class Chain {
 	public boolean hasAccess(Employee e) {
 		Node current = this.first;
 		for(int i=0;i<size;i++) {
-			if(current.value.getName()==e.getName()) {
-				return e.isAllowed();
+			if(current.value.getName().equals(e.getName())) {
+				return current.value.isAllowed();
 			}
 			current = current.next;
 		}
